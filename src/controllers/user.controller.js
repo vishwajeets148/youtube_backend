@@ -7,8 +7,8 @@ import jwt from "jsonwebtoken";
 import dotenv from 'dotenv'
 dotenv.config()
 
-
-const generateAccessandRefreshTokens = async (userId) => {
+/// generateAccessandRefreshTokens METHOD
+const generateAccessandRefreshTokens = async (userId) => {        
   try {
     const user = await User.findById(userId);
 
@@ -118,6 +118,8 @@ const loginUser = asyncHandler(async (req, res) => {
     "-password -refreshToken"
   );
 
+/// Creating security method to show data in client side but only modification in Server Side
+  
   const options = {
     httpOnly: true,
     secure: true,
